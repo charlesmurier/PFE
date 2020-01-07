@@ -1,0 +1,31 @@
+import socket
+
+listensocket = socket.socket()
+Port = 8001
+maxConnections = 999
+IP = socket.gethostname()
+
+listensocket.bind(('', Port))
+
+listensocket.listen(maxConnections)
+print("Server started at " + IP + " on port " + str(Port))
+
+while True:
+    (clientsocket, address) = listensocket.accept()
+    print("New connection made!")
+    running = True
+    while running:
+        file = "result.png"
+        print(file)
+        try:
+            myfile = open(file, 'rb')
+            bytes = myfile.read()
+            if (bytes != 0):
+                print("ok")
+                print(bytes)
+                clientsocket.send(bytes)
+        except IOError:
+            print("File not found!")
+            clientsocket.send("FILE_NOT_FOUND\n")
+        clientsocket.close()
+

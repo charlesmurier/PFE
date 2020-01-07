@@ -1,0 +1,6 @@
+GET / HTTP/1.1
+Host: 10.188.216.56:8000
+User-Agent: avast! Antivirus
+Accept: */*
+Accept-Encoding: deflate, gzip
+
