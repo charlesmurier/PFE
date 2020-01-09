@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a3ea9b46-2df0-43b7-8bb3-041364969773" name="Default Changelist" comment="" />
+    <list default="true" id="a3ea9b46-2df0-43b7-8bb3-041364969773" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Include/original.wav" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Include/original.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Include/receive" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Include/receive" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Include/record.m4a" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Include/record.m4a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Include/result.png" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Include/result.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/Include/test" beforeDir="false" afterPath="$PROJECT_DIR$/venv/Include/test" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +23,13 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1TQdqHlRVCMzr5H3tUxEQnysoKC" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -32,7 +45,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.receive">
+  <component name="RunManager" selected="Python.test">
     <configuration name="convert" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="pfe" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -123,8 +136,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.receive" />
         <item itemvalue="Python.test" />
+        <item itemvalue="Python.receive" />
         <item itemvalue="Python.test2" />
         <item itemvalue="Python.convert" />
       </list>
@@ -147,16 +160,41 @@
       <workItem from="1574781874241" duration="4394000" />
       <workItem from="1575015456911" duration="1324000" />
       <workItem from="1576418436329" duration="4833000" />
-      <workItem from="1578391051307" duration="9901000" />
+      <workItem from="1578391051307" duration="18313000" />
+      <workItem from="1578573731056" duration="5320000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/venv/Include/receive</url>
+          <line>23</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/pfe$receive.coverage" NAME="receive Coverage Results" MODIFIED="1578410631661" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/Include" />
-    <SUITE FILE_PATH="coverage/pfe$test.coverage" NAME="test Coverage Results" MODIFIED="1578410627089" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/Include" />
+    <SUITE FILE_PATH="coverage/pfe$receive.coverage" NAME="receive Coverage Results" MODIFIED="1578579896907" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/Include" />
+    <SUITE FILE_PATH="coverage/pfe$test.coverage" NAME="test Coverage Results" MODIFIED="1578581044746" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/Include" />
     <SUITE FILE_PATH="coverage/pfe$test2.coverage" NAME="test2 Coverage Results" MODIFIED="1574783429066" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/Include" />
     <SUITE FILE_PATH="coverage/pfe$convert.coverage" NAME="convert Coverage Results" MODIFIED="1574782264357" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv/Include" />
   </component>

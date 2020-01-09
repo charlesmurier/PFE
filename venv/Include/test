@@ -849,6 +849,7 @@ else:
 	print("Impossible d'afficher la tablature")
     """
 
+
 listensocket = socket.socket()
 Port = 8000
 maxConnections = 999
@@ -862,6 +863,8 @@ print("Server started at " + IP + " on port " + str(Port))
 while True:
     (clientsocket, address) = listensocket.accept()
     print("New connection made!")
+    img = mpimg.imread("part.png")
+    part = np.copy(img)
     running = True
     while running:
         f = open("record.m4a", "wb")
