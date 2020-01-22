@@ -1,0 +1,73 @@
+# Imports Modules
+import socket
+import numpy as np
+import pydub
+from scipy.io.wavfile import read
+
+def receive_file():
+    listensocket = socket.socket()
+    Port = 8000
+    maxConnections = 999
+    IP = socket.gethostname()
+    listensocket.bind(('', Port))
+    listensocket.listen(maxConnections)
+    print("Server started at " + IP + " on port " + str(Port))
+    (clientsocket, address) = listensocket.accept()
+    print("New connection made!")
+    running = True
+    while running:
+        f = open("record.m4a", "wb")
+        while 1:
+            data = clientsocket.recv(4096)
+            if not data:
+                break
+            f.write(data)
+        print("ok")
+        f.close()
+        sound = pydub.AudioSegment.from_file("record.m4a", format="m4a")
+        sound.export("original.wav", format="wav")
+        running = False
+    return("original.wav")
+
+
+def renvoie_pdf():
+    listensocket = socket.socket()
+    Port = 8001
+    maxConnections = 999
+    IP = socket.gethostname()
+    listensocket.bind(('', Port))
+    listensocket.listen(maxConnections)
+    print("Server started at " + IP + " on port " + str(Port))
+    b=1
+    while True and b==1:
+        (clientsocket, address) = listensocket.accept()
+        print("New connection made!")
+        running = True
+        while running and b==1:
+            file = "result.pdf"#nom du fichier result.pdf
+            print(file)
+            try:
+                myfile = open(file, 'rb')
+                bytes = myfile.read()
+                if (bytes != 0):
+                    print("ok")
+                    print(bytes)
+                    try:
+                        clientsocket.send(bytes)
+                    except IOError:
+                        b=0
+            except IOError:
+                print("File not found!")
+                clientsocket.send("FILE_NOT_FOUND\n")
+            clientsocket.close()
+    return ()
+
+
+def lecture_fichier(path):
+    rate, data = read(path)  # Openning The file
+    return(data,rate)
+
+receive_file()
+renvoie_pdf()
+
+

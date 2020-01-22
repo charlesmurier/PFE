@@ -834,6 +834,7 @@ def affichage_piano(part):
     pygame.quit()
 
 
+
 def affichage_tab(tab):
     fig = plt.imshow(tab)
     fig.axes.get_xaxis().set_visible(False)
@@ -849,63 +850,76 @@ else:
 	print("Impossible d'afficher la tablature")
     """
 
+a=0
+while a==0:
+    ypage_piano = 0
+    ypage_tab = 0
+    x_tab = 200
+    x = 200
+    xnext_tab = 0
+    compt = 0
+    test = False
 
-listensocket = socket.socket()
-Port = 8000
-maxConnections = 999
-IP = socket.gethostname()
-
-listensocket.bind(('', Port))
-
-listensocket.listen(maxConnections)
-print("Server started at " + IP + " on port " + str(Port))
-
-while True:
-    (clientsocket, address) = listensocket.accept()
-    print("New connection made!")
+    # Partition
     img = mpimg.imread("part.png")
     part = np.copy(img)
-    running = True
-    while running:
-        f = open("record.m4a", "wb")
-        a = 0
-        while 1:
-            data = clientsocket.recv(4096)
-            if not data:
-                break
-            f.write(data)
-        print("ok")
-        f.close()
-        sound = pydub.AudioSegment.from_file("record.m4a", format="m4a")
-        sound.export("original.wav", format="wav")
-        freq = analyse_freq("original.wav")
-        # freq=[258,350,190,650,502,404,440,256,258,350,190,650,502,404,440,256,1000]
 
-        # freq=aleatoire_both(80)
+    listensocket = socket.socket()
+    Port = 8000
+    maxConnections = 999
+    IP = socket.gethostname()
 
-        L_piano = adapt_piano(freq)
-        L_tab = adapt_tab(freq)
+    listensocket.bind(('', Port))
 
-        if L_piano != None:
-            remplacement_all_piano(L_piano)
-            affichage_piano(part)
-        else:
-            print("Impossible d'afficher la partition")
+    listensocket.listen(maxConnections)
+    print("Server started at " + IP + " on port " + str(Port))
 
-        running = False
-"""
-        file = "gael2.jpg"
-        print(file)
-        try:
-            myfile = open(file, 'rb')
-            bytes = myfile.read()
-            if (bytes != 0):
-                print("ok")
-                print(bytes)
-                clientsocket.send(bytes)
-        except IOError:
-            print("File not found!")
-            clientsocket.send("FILE_NOT_FOUND\n")
-        clientsocket.close()
+    while True:
+        (clientsocket, address) = listensocket.accept()
+        print("New connection made!")
+        img = mpimg.imread("part.png")
+        part = np.copy(img)
+        running = True
+        while running:
+            f = open("record.m4a", "wb")
+            a = 0
+            while 1:
+                data = clientsocket.recv(4096)
+                if not data:
+                    break
+                f.write(data)
+            print("ok")
+            f.close()
+            sound = pydub.AudioSegment.from_file("record.m4a", format="m4a")
+            sound.export("original.wav", format="wav")
+            freq = analyse_freq("original.wav")
+            # freq=[258,350,190,650,502,404,440,256,258,350,190,650,502,404,440,256,1000]
 
+            # freq=aleatoire_both(80)
+
+            L_piano = adapt_piano(freq)
+            L_tab = adapt_tab(freq)
+
+            if L_piano != None:
+                remplacement_all_piano(L_piano)
+                affichage_piano(part)
+            else:
+                print("Impossible d'afficher la partition")
+
+            running = False
+    """
+            file = "gael2.jpg"
+            print(file)
+            try:
+                myfile = open(file, 'rb')
+                bytes = myfile.read()
+                if (bytes != 0):
+                    print("ok")
+                    print(bytes)
+                    clientsocket.send(bytes)
+            except IOError:
+                print("File not found!")
+                clientsocket.send("FILE_NOT_FOUND\n")
+            clientsocket.close()
+    
 """
